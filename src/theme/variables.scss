@@ -42,25 +42,7 @@ $colors: (
 );
 
 
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
-
-
-
-
-// App Material Design Variables
-// --------------------------------------------------
-// Material Design only Sass variables can go here
-
-
-
-
-// App Windows Variables
-// --------------------------------------------------
-// Windows only Sass variables can go here
-
-
+// Variables
 
 
 // App Theme
@@ -86,3 +68,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+// Views
+// @import "terms-of-use";
+// @import "onboard-welcome"
