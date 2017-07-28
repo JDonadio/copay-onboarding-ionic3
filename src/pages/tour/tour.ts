@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 /**
  * Generated class for the TourPage page.
@@ -15,6 +16,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
   templateUrl: 'tour.html',
 })
 export class TourPage {
+  @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,6 +24,10 @@ export class TourPage {
   skip() {
     console.log('## Skipped');
     this.navCtrl.pop();
+  }
+
+  slideNext() {
+    this.slides.slideNext();
   }
 
   ionViewDidLoad() {
