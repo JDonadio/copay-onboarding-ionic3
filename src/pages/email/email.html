@@ -6,33 +6,39 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <!-- <ion-navbar transparent>
     <ion-buttons end>
       <button ion-button icon-only (click)="skip()">
         Skip
       </button>
     </ion-buttons>
-  </ion-navbar>
+  </ion-navbar> -->
 
 </ion-header>
 
-<ion-content padding>
+<ion-content class="email">
   <div id="success-container">
+    <img src="../../assets/icon/onboarding-success.svg" id="success-image" />
     <div id="success-message" translate>Wallet Created</div>
   </div>
+
   <div id="collect-email">
     <div id="collect-email-inner" *ngIf="!showConfirmForm">
       <div class="heading" translate>Notifications by email</div>
       <div class="prompt" translate>Where would you like to receive email notifications about payments?</div>
+
       <form id="email-form" name="emailForm" (ngSubmit)="showConfirm()" novalidate>
-        <ion-input type="email" placeholder="Email Input" name="email" [(ngModel)]="data.email"></ion-input>
+        <label class="item item-input" id="email-label">
+          <ion-input type="email" placeholder="Email Input" name="email" [(ngModel)]="data.email"></ion-input>
+        </label>
         <ion-item>
-          <ion-label>Get news and updates from BitPay</ion-label>
+          <ion-label class="prompt">Get news and updates from BitPay</ion-label>
           <ion-checkbox name="accept" [(ngModel)]="data.accept"></ion-checkbox>
         </ion-item>
-        <button ion-button block type="submit">Continue &rarr;</button>
+        <button class="primary" ion-button block type="submit">Continue &rarr;</button>
       </form>
     </div>
+
     <div id="collect-email-confirm" *ngIf="showConfirmForm">
       <p translate class="confirm">Is this email address correct?</p>
       <p class="user-email">{{data.email}}</p>
@@ -41,9 +47,15 @@
           <button ion-button (click)="showConfirm()">{{'Edit'}}</button>
         </div>
         <div class="col col-50">
-          <button ion-button ng-disabled="disableButton" (click)="save()">{{'Confirm'}}</button>
+          <button class="primary" ion-button [disabled]="disableButton" (click)="save()">{{'Confirm'}}</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="overlay collect-overlay">
+    <button (click)="goNextView()">
+      {{'Skip'}}
+    </button>
   </div>
 </ion-content>

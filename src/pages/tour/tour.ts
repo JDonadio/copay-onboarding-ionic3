@@ -41,14 +41,14 @@ export class TourPage {
 
   createDefaultWallet() {
     let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      content: 'Creating Personal Wallet...'
     });
     loading.present();
 
     setTimeout(() => {
       loading.dismiss();
       this.navCtrl.push('EmailPage');
-    }, 1000);
+    }, 1500);
   }
 
 }

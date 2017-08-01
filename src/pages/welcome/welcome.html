@@ -8,13 +8,13 @@
 </ion-header>
 
 
-<ion-content ng-controller="welcomeController" ng-init="createProfile()" scroll="false" padding>
-  <div id="logo-tagline">
+<ion-content class="onboarding page-welcome" padding>
+  <div class="logo-tagline">
     <img src='../../assets/icon/logo-negative.svg' id="logo" />
-    <p id="lead" translate>Take control of your money,<br />get started with bitcoin.</p>
+    <p class="onboarding-description" translate>Take control of your money,<br />get started with bitcoin.</p>
   </div>
-  <div id="cta-buttons">
-    <button ion-button block id="get-started" (click)="getStarted()" translate>Get started</button>
-    <button ion-button block outline id="restore" translate href ui-sref="onboarding.import({'fromOnboarding':true})">Restore from backup</button>
+  <div class="buttons">
+    <button class="primary" ion-button block id="get-started" (click)="getStarted()" translate>Get started</button>
+    <button class="secondary" ion-button block outline id="restore" translate (click)="fromBackup()">Restore from backup</button>
   </div>
 </ion-content>
