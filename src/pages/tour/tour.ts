@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
@@ -17,21 +17,38 @@ import { Slides } from 'ionic-angular';
 })
 export class TourPage {
   @ViewChild(Slides) slides: Slides;
+  public currentIndex: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  }
+
+  ngOnInit() {
+    this.currentIndex = this.slides.getActiveIndex() || 0;
   }
 
   skip() {
-    console.log('## Skipped');
-    this.navCtrl.pop();
+    this.navCtrl.push('EmailPage');
   }
 
   slideNext() {
     this.slides.slideNext();
+    this.currentIndex = this.slides.getActiveIndex();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TourPage');
+  }
+
+  createDefaultWallet() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present();
+
+    setTimeout(() => {
+      loading.dismiss();
+      this.navCtrl.push('EmailPage');
+    }, 1000);
   }
 
 }

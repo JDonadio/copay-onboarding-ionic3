@@ -5,19 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-  </ion-navbar>
 </ion-header>
 
 
-<ion-content ng-controller="welcomeController" ng-init="createProfile()" scroll="false">
+<ion-content ng-controller="welcomeController" ng-init="createProfile()" scroll="false" padding>
   <div id="logo-tagline">
-      <!-- <img src='src/assets/icon/facicon.ico' id="logo" /> -->
-      <p id="lead" translate>Take control of your money,<br />get started with bitcoin.</p>
+    <img src='../../assets/icon/logo-negative.svg' id="logo" />
+    <p id="lead" translate>Take control of your money,<br />get started with bitcoin.</p>
   </div>
   <div id="cta-buttons">
-      <button class="button button-standard button-primary" id="get-started" (click)="getStarted()" translate>Get started</button>
-      <button class="button button-standard button-secondary button-clear" id="restore" translate href ui-sref="onboarding.import({'fromOnboarding':true})">Restore from backup</button>
+    <button ion-button block id="get-started" (click)="getStarted()" translate>Get started</button>
+    <button ion-button block outline id="restore" translate href ui-sref="onboarding.import({'fromOnboarding':true})">Restore from backup</button>
   </div>
 </ion-content>
