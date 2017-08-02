@@ -31,6 +31,10 @@ export class DisclaimerPage {
     console.log('ionViewDidLoad DisclaimerPage');
   }
 
+  selectTerms() {
+    this.terms.accepted = !this.terms.accepted;
+  }
+
   openModal() {
     const myModal = this.modalCtrl.create('DisclaimerModalPage');
     myModal.present();

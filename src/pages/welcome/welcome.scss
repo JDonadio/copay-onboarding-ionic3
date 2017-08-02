@@ -1,4 +1,4 @@
-.page-welcome {
+.welcome {
   .logo-tagline {
     width: 100%;
     height: 70%;
@@ -20,6 +20,9 @@
   }
 
   .buttons {
-    margin-top: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    padding: 15px;
   }
 }

@@ -5,15 +5,6 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <!-- <ion-navbar transparent>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="skip()">
-        Skip
-      </button>
-    </ion-buttons>
-  </ion-navbar> -->
-
 </ion-header>
 
 <ion-content class="email">
@@ -44,18 +35,18 @@
       <p class="user-email">{{data.email}}</p>
       <div class="row">
         <div class="col col-50">
-          <button ion-button (click)="showConfirm()">{{'Edit'}}</button>
+          <button class="primary" block ion-button (click)="showConfirm()">Edit</button>
         </div>
         <div class="col col-50">
-          <button class="primary" ion-button [disabled]="disableButton" (click)="save()">{{'Confirm'}}</button>
+          <button class="primary" block ion-button (click)="save()">Confirm</button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="overlay collect-overlay">
-    <button (click)="goNextView()">
-      {{'Skip'}}
+    <button (click)="skip()">
+      Skip
     </button>
   </div>
 </ion-content>
