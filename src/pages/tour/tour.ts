@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
-import { Slides } from 'ionic-angular';
+import { Slides, Navbar } from 'ionic-angular';
 
 /**
  * Generated class for the TourPage page.
@@ -17,6 +17,8 @@ import { Slides } from 'ionic-angular';
 })
 export class TourPage {
   @ViewChild(Slides) slides: Slides;
+  @ViewChild(Navbar) navBar: Navbar;
+
   public currentIndex: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
@@ -24,10 +26,21 @@ export class TourPage {
 
   ngOnInit() {
     this.currentIndex = this.slides.getActiveIndex() || 0;
+    this.navBar.backButtonClick = (e: UIEvent) => {
+      this.slidePrev();
+    }
   }
 
   skip() {
     this.navCtrl.push('EmailPage');
+  }
+
+  slidePrev() {
+    if (this.currentIndex == 0) this.navCtrl.pop();
+    else {
+      this.slides.slidePrev();
+      this.currentIndex = this.slides.getActiveIndex();
+    }
   }
 
   slideNext() {
