@@ -62,6 +62,23 @@ $v-visible-radius:                                   6px !default;
 @import "roboto";
 @import "noto-sans";
 
+.checkbox .checkbox-icon {
+  border-color: $v-accent-color !important;
+  position: relative !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+  background: transparent !important;
+  -webkit-appearance: none !important;
+  border-radius: 50% !important;
+}
+
+.checkbox .checkbox-checked .checkbox-inner {
+  left: 40% !important;
+  top: 15% !important;
+  height: 15px !important;
+  border-color: $v-accent-color !important;
+}
 
 .onboarding {
   color: $v-onboarding-color !important;

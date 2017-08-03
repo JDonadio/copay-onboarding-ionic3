@@ -15,7 +15,7 @@ import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 })
 export class DisclaimerModalPage {
 
-  constructor(private navParams: NavParams, private view: ViewController) {
+  constructor(public navParams: NavParams, private view: ViewController) {
   }
 
   closeModal() {

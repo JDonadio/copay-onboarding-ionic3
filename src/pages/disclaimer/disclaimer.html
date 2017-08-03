@@ -31,7 +31,10 @@
   <div id="agree-to-terms" *ngIf="accepted.first && accepted.second">
     <div class="terms-check">
       <ion-checkbox [(ngModel)]="terms.accepted"></ion-checkbox>
-      <label (click)="selectTerms()" translate>I have read, understood, and agree to the <a (click)="openModal()" translate>Terms of Use</a>.</label>
+      <div class="modal-text">
+        <label (click)="selectTerms()" translate>I have read, understood, and agree to the </label>
+        <a (click)="openModal()" translate>Terms of Use.</a>
+      </div>
     </div>
     <button class="primary" ion-button block [disabled]="!accepted.first || !accepted.second || !terms.accepted" (click)="confirm()" translate>Confirm &amp; Finish</button>
   </div>

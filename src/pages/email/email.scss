@@ -1,4 +1,8 @@
 page-email {
+  ion-label {
+    text-align: left !important;
+    white-space: normal;
+  }
   .email {
     color: $v-onboarding-color;
     background: rgb(17, 209, 166) !important;

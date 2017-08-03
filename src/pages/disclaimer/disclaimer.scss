@@ -22,16 +22,22 @@ page-disclaimer {
         padding-left: 0px;
       }
       .terms-check {
+        text-align: left;
         margin-bottom: 25px;
         display: flex;
         label {
-          text-align: left;
-          margin-left: 25px;
           font-size: 16px;
+          cursor: pointer;
+        }
+        a {
+          cursor: pointer;
         }
         .checkbox {
           margin: auto;
           padding: 5px;
+        }
+        .modal-text {
+          margin-left: 30px;
         }
       }
     }
