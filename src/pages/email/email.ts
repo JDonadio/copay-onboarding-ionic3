@@ -15,7 +15,6 @@ import { IonicPage, NavController, NavParams, ActionSheetController } from 'ioni
 export class EmailPage {
   public data: any;
   public showConfirmForm: boolean;
-  // public acttionSheet: ActionSheetController;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheet: ActionSheetController) {
     this.data = {
@@ -23,7 +22,6 @@ export class EmailPage {
       email: '',
     };
     this.showConfirmForm = false;
-    // this.acttionSheet = actionSheet;
   }
 
   skip() {
